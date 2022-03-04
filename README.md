@@ -1,6 +1,8 @@
 # Contacts manager application
 
-### Instruction for running the application locally
+[Backend Repository](https://github.com/arjunvijayanathakurup/contacts-application)
+### Instruction for running the frontend application locally
+(Instructions for running the backend application are available on the [Backend Repository README.md](https://github.com/arjunvijayanathakurup/contacts-application/blob/main/README.md)
 __Requirements__
 - npm version: ^8.3.1
 - node version: v16.14.0 (LTS)
