@@ -1,32 +1,29 @@
-import React, { Component } from 'react';
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Navbar from './components/layout/Navbar';
 import Home from './components/pages/Home';
-// import SignUp from './components/SignUp';
-// import SignIn from './components/SignIn';
+import Signup from './components/pages/Signup';
+import Signin from './components/pages/Signin';
+import useTokenManager from './useTokenManager';
 
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <HashRouter>
-        <div className="App">
-          <Navbar />
+function App() {
+  const { token } = useTokenManager()
+  return (
+    <BrowserRouter>
+      <div className="App">
+          <Navbar token={token}/>
           <Routes>
-            <Route exact path="/" element={<Home />} />
-            {/* <Route exact path="/signup" component={SignUp} />
-            <Route exact path="/signin" component={SignIn} /> */}
-            <Route render={
-              () => <h1 className="font-weight-bold text-center pagenotfound">
-                404 Page Not Found!
-                </h1>}/>
+            <Route exact path="/" element={<Home />} />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/signin" element={<Signin />} />
           </Routes>
-        </div>
-      </HashRouter>
-    );
-  }
+      </div>
+    </BrowserRouter>
+
+  );
 }
 
 export default App;
